@@ -13,24 +13,24 @@
     </a>
   </ul>
 
-    <ul class="flex-row">
-      <a *ngFor="let rrss of rrssInfo"
-        [href]="rrss.href" target="_blank"
-      >
-        <li class="neumorphism neumorphism-hover capsule-circle">
-          <fa-icon [icon]="rrss.icon" [classes]="['fa-lg']"></fa-icon>
-        </li>
-      </a>
-    </ul>
+  <ul class="flex-row">
+    <a *ngFor="let rrss of rrssInfo"
+      [href]="rrss.href" target="_blank"
+    >
+      <li class="neumorphism neumorphism-hover capsule-circle">
+        <fa-icon [icon]="rrss.icon" [classes]="['fa-lg']"></fa-icon>
+      </li>
+    </a>
+  </ul>
 
-    <ul class="flex-row">
-      <a *ngFor="let legal of legalInfo"
-        [href]="legal.href"
-      >
-        <li class="neumorphism neumorphism-hover capsule">
-          {{legal.text}}
-        </li>
-      </a>
-    </ul>
+  <ul class="flex-row">
+    <a *ngFor="let legal of legalInfo"
+      [href]="legal.href"
+    >
+      <li class="neumorphism neumorphism-hover capsule">
+        {{legal.text}}
+      </li>
+    </a>
+  </ul>
 
 </footer>
