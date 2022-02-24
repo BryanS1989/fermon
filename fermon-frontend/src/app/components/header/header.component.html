@@ -1,3 +1,12 @@
-<p>header works!</p>
+<header class="neumorphism flex-col">
+  <a routerLink="/">
+    <picture>
+      <source media="(min-width: 1023px)" srcset="../../../assets/images/FERMON_LOGO_400.png">
+      <source media="(min-width: 767px)" srcset="../../../assets/images/FERMON_LOGO_300.png">
+      <source media="(min-width: 374px)" srcset="../../../assets/images/FERMON_LOGO_200.png">
+      <img src="../../../assets/images/FERMON_LOGO_SM.png" class="logo neumorphism-inverse"/>
+    </picture>
+  </a>
 
-<app-navbar></app-navbar>
+  <app-navbar></app-navbar>
+</header>
