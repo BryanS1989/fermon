@@ -48,3 +48,73 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+html {
+  background-color: #e7e7e7;
+  color: #444444;
+}
+
+a {
+  text-decoration: none;
+  color: #444444;
+}
+
+
+/*----------------------------------------------------------------------------*/
+/*---                                                                      ---*/
+/*---                            NEUMORPHISM                               ---*/
+/*---                                                                      ---*/
+/*----------------------------------------------------------------------------*/
+.neumorphism {
+  background: #e7e7e7;
+  box-shadow: 5px 5px 10px #bebebe,
+              -5px -5px 10px #ffffff;
+}
+
+.neumorphism-hover:hover {
+  box-shadow: inset 5px 5px 10px #bebebe,
+              inset -5px -5px 10px #ffffff;
+}
+
+/*----------------------------------------------------------------------------*/
+/*---                                                                      ---*/
+/*---                            SPECIAL ELEMENTS                          ---*/
+/*---                                                                      ---*/
+/*----------------------------------------------------------------------------*/
+.expand-capsule {
+  position: relative;
+  width: 1rem;
+  transition: width 0.5s;
+  border-radius: 100%;
+  padding: 0.5rem;
+}
+.expand-capsule:hover {
+  width: 25rem;
+  transition: width 1.5s;
+  border-radius: 5rem;
+}
+
+.expand-capsule .expand-capsule-text {
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: none;
+  position: absolute;
+  left: 2.5rem;
+}
+
+.expand-capsule:hover .expand-capsule-text  {
+  opacity: 1;
+  transition: opacity 0.5s;
+  display: inline-block;
+  transition: display 0.1s;
+}
+
+.capsule {
+  border-radius: 5rem;
+  padding: 0.5rem;
+}
+
+.capsule-circle {
+  border-radius: 100%;
+  padding: 0.5rem;
+}
