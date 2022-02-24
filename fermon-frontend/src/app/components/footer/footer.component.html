@@ -1,1 +1,36 @@
-<p>footer works!</p>
+<footer class="neumorphism flex-row">
+
+  <ul class="flex-row">
+    <a *ngFor="let info of fermonInfo"
+      [href]="info.href" target="_blank"
+    >
+      <li class="neumorphism neumorphism-hover capsule-circle expand-capsule">
+        <fa-icon [icon]="info.icon" [classes]="info.class"></fa-icon>
+        <p class="expand-capsule-text">
+          {{info.text}}
+        </p>
+      </li>
+    </a>
+  </ul>
+
+    <ul class="flex-row">
+      <a *ngFor="let rrss of rrssInfo"
+        [href]="rrss.href" target="_blank"
+      >
+        <li class="neumorphism neumorphism-hover capsule-circle">
+          <fa-icon [icon]="rrss.icon" [classes]="['fa-lg']"></fa-icon>
+        </li>
+      </a>
+    </ul>
+
+    <ul class="flex-row">
+      <a *ngFor="let legal of legalInfo"
+        [href]="legal.href"
+      >
+        <li class="neumorphism neumorphism-hover capsule">
+          {{legal.text}}
+        </li>
+      </a>
+    </ul>
+
+</footer>
