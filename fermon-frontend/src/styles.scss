@@ -93,26 +93,32 @@ a {
   transition: width 0.5s;
   border-radius: 100%;
   padding: 0.5rem;
-}
-.expand-capsule:hover {
-  width: 25rem;
-  transition: width 1.5s;
-  border-radius: 5rem;
+
+  &:hover {
+    width: 25rem;
+    transition: width 1.5s;
+    border-radius: 5rem;
+  }
 }
 
-.expand-capsule .expand-capsule-text {
-  opacity: 0;
-  transition: opacity 0.5s;
-  display: none;
-  position: absolute;
-  left: 2.5rem;
-}
 
-.expand-capsule:hover .expand-capsule-text  {
-  opacity: 1;
-  transition: opacity 0.5s;
-  display: inline-block;
-  transition: display 0.1s;
+.expand-capsule {
+
+  .expand-capsule-text {
+    opacity: 0;
+    transition: opacity 0.5s;
+    display: none;
+    position: absolute;
+    left: 2.5rem;
+  }
+
+  &:hover .expand-capsule-text  {
+    opacity: 1;
+    transition: opacity 0.5s;
+    display: inline-block;
+    transition: display 0.1s;
+  }
+
 }
 
 .capsule {
