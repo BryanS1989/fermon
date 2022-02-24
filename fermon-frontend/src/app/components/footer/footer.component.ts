@@ -12,6 +12,7 @@ export class FooterComponent implements OnInit {
   fermonInfo = [
     {
       icon : faLocationDot,
+      style: "--fa-animation-duration: 3s;",
       href: "https://www.google.com/maps/place/Ferreter%C3%ADa+Fermon+(Suministros+Industriales)/@41.326641,2.0907591,19z/data=!3m1!4b1!4m5!3m4!1s0x12a49ec3fce03649:0xc97863cb29b928e!8m2!3d41.32664!4d2.0913063",
       class : ['fa-bounce', 'fa-lg'],
       show: false,
@@ -19,6 +20,7 @@ export class FooterComponent implements OnInit {
     },
     {
       icon : faPhone,
+      style: "--fa-animation-duration: 3s;",
       href: 'tel:+34933790320',
       class : ['fa-shake', 'fa-lg'],
       show: false,
@@ -26,6 +28,7 @@ export class FooterComponent implements OnInit {
     },
     {
       icon : faEnvelope,
+      style: "--fa-animation-duration: 3s;",
       href: 'mailto:info@ferreteriafermon.com',
       class : ['fa-beat', 'fa-lg'],
       show: false,
