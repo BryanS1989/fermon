@@ -88,6 +88,7 @@ a {
 /*---                                                                      ---*/
 /*----------------------------------------------------------------------------*/
 .expand-capsule {
+
   position: relative;
   width: 1rem;
   transition: width 0.5s;
@@ -99,10 +100,6 @@ a {
     transition: width 1.5s;
     border-radius: 5rem;
   }
-}
-
-
-.expand-capsule {
 
   .expand-capsule-text {
     opacity: 0;
