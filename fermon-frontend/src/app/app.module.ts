@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AsideComponent } from './components/aside/aside.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
-    AsideComponent
+    AsideComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
