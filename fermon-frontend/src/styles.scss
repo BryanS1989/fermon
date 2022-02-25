@@ -70,6 +70,12 @@ a {
   }
 }
 
+input{
+  border: none;
+  outline: none;
+  background-color: #e7e7e7;
+}
+
 .flex-row {
   display: flex;
   flex-flow: row wrap;
@@ -103,6 +109,11 @@ a {
 .neumorphism-inverse {
   box-shadow: inset 5px 5px 10px #bebebe,
               inset -5px -5px 10px #ffffff;
+}
+
+.neumorphism-inverse-left {
+  box-shadow: inset 5px 5px 10px #bebebe,
+              inset 5px -5px 10px #ffffff;
 }
 
 /*----------------------------------------------------------------------------*/
@@ -148,5 +159,17 @@ a {
 
 .capsule-circle {
   border-radius: 100%;
+  padding: 0.5rem;
+}
+
+.capsule-radius-left {
+  border-top-left-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+  padding: 0.5rem;
+}
+
+.capsule-radius-right {
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
   padding: 0.5rem;
 }
