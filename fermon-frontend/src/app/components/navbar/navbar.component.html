@@ -1,1 +1,70 @@
-<p>navbar works!</p>
+<div class="navbar flex-row">
+  <div class="searchBar">
+    <input type="search" id="searchValue"
+      [placeholder]="placeHolder"
+      [formControl]="searchInput"
+      (input)="searchProducts()"
+      class="neumorphism-inverse-left capsule-radius-left"
+    >
+    <a (click)="searchProducts()"
+      class="neumorphism neumorphism-hover capsule-radius-right"
+    >
+      <fa-icon [icon]="searchIcon" [classes]="['fa-lg']"></fa-icon>
+    </a>
+  </div>
+  <nav>
+    <ul class="flex-row">
+      <a [href]="">
+        <li class="neumorphism neumorphism-hover capsule-circle">
+          <fa-icon [icon]="userIcon" [classes]="['fa-lg']"></fa-icon>
+        </li>
+      </a>
+      <a [href]="">
+        <li class="neumorphism neumorphism-hover capsule-circle">
+          <fa-icon [icon]="cartIcon" [classes]="['fa-lg']"></fa-icon>
+        </li>
+      </a>
+      <a [href]=""
+        (click)="toggleSideMenu()"
+      >
+        <li class="neumorphism neumorphism-hover capsule-circle">
+          <fa-icon [icon]="menuIcon" [classes]="['fa-2x']"></fa-icon>
+        </li>
+      </a>
+    </ul>
+  </nav>
+  <nav class="sideMenu neumorphism flex-row"
+    *ngIf="showSideMenu"
+  >
+    <a [href]=""
+      (click)="toggleSideMenu()"
+      class="neumorphism neumorphism-hover capsule-circle"
+    >
+      <fa-icon [icon]="menuClose" [classes]="['fa-md']"></fa-icon>
+    </a>
+    <ul
+      class="flex-col"
+    >
+      <li>
+        Nosotros
+      </li>
+      <li>
+        Productos
+      </li>
+      <li>
+        Inicio Sesión
+      </li>
+      <li>
+        Carrito
+      </li>
+    </ul>
+  </nav>
+
+  <div
+    class="backdrop"
+    (click)="toggleSideMenu()"
+    *ngIf="showSideMenu"
+  >
+
+  </div>
+</div>
