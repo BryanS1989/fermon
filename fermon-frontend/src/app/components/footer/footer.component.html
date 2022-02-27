@@ -25,7 +25,7 @@
 
   <ul class="flex-row">
     <a *ngFor="let legal of legalInfo"
-      [href]="legal.href"
+      [routerLink]="[legal.href, legal.paramUrl]"
     >
       <li class="neumorphism neumorphism-hover capsule">
         {{legal.text}}
