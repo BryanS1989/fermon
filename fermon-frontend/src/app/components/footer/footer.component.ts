@@ -56,15 +56,18 @@ export class FooterComponent implements OnInit {
   legalInfo = [
     {
       text : "Aviso legal",
-      href : ""
+      href : "/legal",
+      paramUrl: "warning"
     },
     {
       text : "Politica de privacidad",
-      href : ""
+      href : "/legal",
+      paramUrl: "policy"
     },
     {
       text : "Politica de cookies",
-      href : ""
+      href : "/legal",
+      paramUrl: "cookies"
     }
   ];
 
