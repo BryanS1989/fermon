@@ -1,0 +1,68 @@
+<article>
+  <section *ngFor="let section of pageContent">
+    <h1 *ngIf="section.type === 'primary' && section.title">{{section.title}}</h1>
+    <h2 *ngIf="section.type === 'secondary' && section.title">{{section.title}}</h2>
+    <div *ngFor="let content of section.contents">
+      <p *ngIf="content.type === 'text'">
+        {{content.content}}
+      </p>
+      <dl *ngIf="content.type === 'list' && content.typeList === 'dl'">
+        <div *ngFor="let element of content.elements">
+          <dt>{{element.title}}</dt>
+          <dd *ngFor="let listContent of element.contents">
+            <p *ngIf="listContent.type === 'text'">
+              {{listContent.content}}
+            </p>
+          </dd>
+        </div>
+      </dl>
+      <ol *ngIf="content.type === 'list' && content.typeList === 'ol'">
+        <li *ngFor="let element of content.elements">
+          <h3 *ngIf="element.title">{{element.title}}</h3>
+          <div *ngFor="let listContent of element.contents">
+            <p *ngIf="listContent.type === 'text'">
+              {{listContent.content}}
+            </p>
+            <ul *ngIf="listContent.type === 'list' && listContent.typeList === 'ul'">
+              <li *ngFor="let element of listContent.elements">
+                <div *ngFor="let listContent of element.contents">
+                  <p *ngIf="listContent.type === 'text'">
+                    {{listContent.content}}
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+      <ul *ngIf="content.type === 'list' && content.typeList === 'ul'">
+        <li *ngFor="let element of content.elements">
+          <h3 *ngIf="element.title">{{element.title}}</h3>
+          <div *ngFor="let listContent of element.contents">
+            <p *ngIf="listContent.type === 'text'">
+              {{listContent.content}}
+            </p>
+          </div>
+        </li>
+      </ul>
+      <table *ngIf="content.type === 'table'">
+        <thead>
+          <tr>
+            <th *ngFor="let header of content.headElements">
+              {{header.title}}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of content.rowElements">
+            <td *ngFor="let cell of row.cells">
+              <p *ngFor="let content of cell.contents">
+                {{content}}
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</article>
