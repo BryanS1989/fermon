@@ -62,7 +62,7 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html {
-  background-color: #e7e7e7;
+  background-color: #f1f1f1;
   color: #444444;
 }
 
@@ -78,7 +78,7 @@ a {
 input{
   border: none;
   outline: none;
-  background-color: #e7e7e7;
+  background-color: #f1f1f1;
 }
 
 .flex-row {
@@ -101,23 +101,23 @@ input{
 /*---                                                                      ---*/
 /*----------------------------------------------------------------------------*/
 .neumorphism {
-  background: #e7e7e7;
-  box-shadow: 5px 5px 10px #bebebe,
+  background: #f1f1f1;
+  box-shadow: 5px 5px 10px #cacaca,
               -5px -5px 10px #ffffff;
 }
 
 .neumorphism-hover:hover {
-  box-shadow: inset 5px 5px 10px #bebebe,
+  box-shadow: inset 5px 5px 10px #cacaca,
               inset -5px -5px 10px #ffffff;
 }
 
 .neumorphism-inverse {
-  box-shadow: inset 5px 5px 10px #bebebe,
+  box-shadow: inset 5px 5px 10px #cacaca,
               inset -5px -5px 10px #ffffff;
 }
 
 .neumorphism-inverse-left {
-  box-shadow: inset 5px 5px 10px #bebebe,
+  box-shadow: inset 5px 5px 10px #cacaca,
               inset 5px -5px 10px #ffffff;
 }
 
