@@ -13,6 +13,7 @@ import { AsideComponent } from './components/aside/aside.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LegalComponent } from './components/legal/legal.component';
+import { BannerSliderComponent } from './components/banner-slider/banner-slider.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LegalComponent } from './components/legal/legal.component';
     NavbarComponent,
     AsideComponent,
     HomeComponent,
-    LegalComponent
+    LegalComponent,
+    BannerSliderComponent
   ],
   imports: [
     BrowserModule,

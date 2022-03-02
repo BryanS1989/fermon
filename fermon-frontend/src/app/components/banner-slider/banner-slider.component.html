@@ -1,0 +1,54 @@
+<article
+  class="slide-banner-container"
+>
+  <section
+    *ngFor="let banner of banners; let i = index"
+  >
+    <div *ngIf="i === slideIndex"
+      class="slide-banner"
+      @slideBannerAnimation
+    >
+      <h1 class="banner-title" *ngIf="banner.title">
+        {{banner.title}}
+      </h1>
+
+      <p *ngIf="banner.cite">
+        <q class="banner-cite">
+          {{banner.cite}}
+        </q>
+      </p>
+
+      <p *ngIf="banner.text"
+        class="banner-text"
+      >
+        {{banner.text}}
+      </p>
+
+      <a *ngIf="banner.button" [routerLink]="banner.button.route" class="banner-button">{{banner.button.text}}</a>
+
+      <picture *ngIf="banner.image">
+        <source media="(min-width: 1023px)" srcset="../../../assets/images/banners/{{banner.image}}_1440.jpg">
+        <source media="(min-width: 767px)" srcset="../../../assets/images/banners/{{banner.image}}_768.jpg">
+        <source media="(min-width: 767px)" srcset="../../../assets/images/banners/{{banner.image}}_425.jpg">
+        <img src="../../../assets/images/banners/{{banner.image}}_425.jpg" class="banner-image"/>
+      </picture>
+    </div>
+  </section>
+
+  <a class="selector-banner previous-banner" (click)="slideImageBanner(-1)">
+    <fa-icon [icon]="previousIcon" [classes]="['fa-2x']" class="slide-icon"></fa-icon>
+  </a>
+  <a class="selector-banner next-banner" (click)="slideImageBanner(1)">
+    <fa-icon [icon]="nextIcon" [classes]="['fa-2x']" class="slide-icon"></fa-icon>
+  </a>
+
+  <div class="dots">
+    <a class="dot"
+      *ngFor="let banner of banners; let i = index"
+      [attr.data-index]="i"
+      (click)="selectedBannerImage(i)"
+    >
+      <fa-icon [icon]="(i === slideIndex)? dotSelectedIcon : dotIcon" [classes]="['fa-lg']" class="slide-icon"></fa-icon>
+    </a>
+  </div>
+</article>
