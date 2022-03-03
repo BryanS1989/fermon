@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { trigger, transition, style, animate, useAnimation } from "@angular/animations";
 
-import { faAngleRight, faAngleLeft, faCircleDot, faCircle } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight, faAngleLeft, faCircleDot, faCircle  } from "@fortawesome/free-solid-svg-icons";
 
 import { fadeIn, fadeOut } from "../../animations/fade.animation";
 

@@ -9,26 +9,36 @@
   height: 100%;
   width: 100%;
   color: #f1f1f1;
-  padding: 1.5rem;
+  padding: 2rem;
   user-select: none;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
 
   .banner-title {
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 3rem;
+    text-transform: uppercase;
   }
 
   .banner-cite {
     font-size: 2rem;
-    quotes: '\0022' '\0022' '\00AB' '\00BB';
+    font-style: oblique;
+    quotes: "«" "»";
+
+    &:before {
+      content: open-quote
+    }
+
+    &:after  {
+      content: close-quote;
+    }
   }
 
   .banner-text {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-style: italic;
   }
 
