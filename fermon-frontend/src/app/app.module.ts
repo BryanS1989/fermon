@@ -14,6 +14,7 @@ import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LegalComponent } from './components/legal/legal.component';
 import { BannerSliderComponent } from './components/banner-slider/banner-slider.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BannerSliderComponent } from './components/banner-slider/banner-slider.
     AsideComponent,
     HomeComponent,
     LegalComponent,
-    BannerSliderComponent
+    BannerSliderComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
