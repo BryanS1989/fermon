@@ -1,12 +1,12 @@
-<div class="searchBar">
+<div class="searchBar flex-row">
   <input type="search" id="searchValue"
     [placeholder]="placeHolder"
     [formControl]="searchInput"
     (input)="searchProducts()"
-    class="neumorphism-inverse-left capsule-radius-left"
+    class="search-input neumorphism-inverse-left capsule-radius-left"
   >
   <a (click)="searchProducts()"
-    class="neumorphism neumorphism-hover capsule-radius-right"
+    class="search-value neumorphism neumorphism-hover capsule-radius-right"
   >
     <fa-icon [icon]="searchIcon" [classes]="['fa-lg']"></fa-icon>
   </a>
