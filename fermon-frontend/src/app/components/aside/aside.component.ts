@@ -16,9 +16,16 @@ export class AsideComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.toggleScroll();
   }
 
   toggleSideMenu() : void {
     this.showSideMenu = !this.showSideMenu;
+    this.toggleScroll();
+  }
+
+  toggleScroll() {
+    let body = document.querySelector('body');
+    body?.classList.toggle('overflow-hidden');
   }
 }
