@@ -18,13 +18,13 @@
   text-align: center;
 
   .banner-title {
-    font-size: 3rem;
+    font-size: 3.5rem;
     line-height: 3rem;
     text-transform: uppercase;
   }
 
   .banner-cite {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-style: oblique;
     quotes: "«" "»";
 
@@ -91,26 +91,34 @@
   &.previous-banner {
     left: 0;
     align-items: flex-start;
+
+    & .slide-icon {
+      opacity: 0;
+    }
   }
 
   &.previous-banner:hover {
     background: linear-gradient(to right, rgba(68, 68, 68, 0.25), rgba(68, 68, 68, 0.005));
 
     & .slide-icon {
-      color: #447fb9;
+      opacity: 1;
     }
   }
 
   &.next-banner {
     right: 0;
     align-items: flex-end;
+
+    & .slide-icon {
+      opacity: 0;
+    }
   }
 
   &.next-banner:hover {
     background: linear-gradient(to left, rgba(68, 68, 68, 0.25), rgba(68, 68, 68, 0.005));
 
     & .slide-icon {
-      color: #447fb9;
+      opacity: 1;
     }
   }
 }
