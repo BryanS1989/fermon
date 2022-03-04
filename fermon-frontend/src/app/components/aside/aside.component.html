@@ -1,1 +1,33 @@
-<p>aside works!</p>
+<nav class="sideMenu neumorphism flex-col"
+  *ngIf="showSideMenu"
+>
+  <a [href]=""
+    (click)="toggleSideMenu()"
+    class="close-backdrop"
+  >
+    <fa-icon [icon]="menuClose" [classes]="['fa-md']"></fa-icon>
+  </a>
+  <ul
+    class="flex-col"
+  >
+    <li>
+      Nosotros
+    </li>
+    <li>
+      Productos
+    </li>
+    <li>
+      Inicio Sesión
+    </li>
+    <li>
+      Carrito
+    </li>
+  </ul>
+</nav>
+
+<div
+  class="backdrop"
+  (click)="toggleSideMenu()"
+  *ngIf="showSideMenu"
+>
+</div>
