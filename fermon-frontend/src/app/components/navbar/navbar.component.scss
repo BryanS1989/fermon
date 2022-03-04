@@ -1,22 +1,15 @@
 .navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  width: 100%;
 
-  .sideMenu {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    width: 50%;
-    z-index: 10;
+  .navbar-list {
+    justify-content: flex-end;
+
+    & :nth-child(2) {
+      margin-left: auto;
+    }
   }
-
-  .backdrop {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 5;
-    background-color: rgba(68, 68, 68, 0.5);
-  }
-
 }

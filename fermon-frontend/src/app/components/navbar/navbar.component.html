@@ -1,62 +1,25 @@
-<div class="navbar flex-row">
-  <nav>
-    <ul class="flex-row">
+<nav class="navbar">
+  <ul class="navbar-list flex-row">
 
+    <li class="neumorphism neumorphism-hover capsule-circle">
       <a [href]=""
         (click)="toggleSideMenu()"
       >
-        <li class="neumorphism neumorphism-hover capsule-circle">
-          <fa-icon [icon]="menuIcon" [classes]="['fa-2x']"></fa-icon>
-        </li>
+        <fa-icon [icon]="menuIcon" [classes]="['fa-2x']"></fa-icon>
       </a>
+    </li>
 
+    <li class="neumorphism neumorphism-hover capsule-circle">
       <a [href]="">
-        <li class="neumorphism neumorphism-hover capsule-circle">
-          <fa-icon [icon]="userIcon" [classes]="['fa-lg']"></fa-icon>
-        </li>
+        <fa-icon [icon]="userIcon" [classes]="['fa-lg']"></fa-icon>
       </a>
+    </li>
 
+    <li class="neumorphism neumorphism-hover capsule-circle">
       <a [href]="">
-        <li class="neumorphism neumorphism-hover capsule-circle">
-          <fa-icon [icon]="cartIcon" [classes]="['fa-lg']"></fa-icon>
-        </li>
+        <fa-icon [icon]="cartIcon" [classes]="['fa-lg']"></fa-icon>
       </a>
+    </li>
 
-    </ul>
-  </nav>
-
-  <nav class="sideMenu neumorphism flex-row"
-    *ngIf="showSideMenu"
-  >
-    <a [href]=""
-      (click)="toggleSideMenu()"
-      class="neumorphism neumorphism-hover capsule-circle"
-    >
-      <fa-icon [icon]="menuClose" [classes]="['fa-md']"></fa-icon>
-    </a>
-    <ul
-      class="flex-col"
-    >
-      <li>
-        Nosotros
-      </li>
-      <li>
-        Productos
-      </li>
-      <li>
-        Inicio Sesión
-      </li>
-      <li>
-        Carrito
-      </li>
-    </ul>
-  </nav>
-
-  <div
-    class="backdrop"
-    (click)="toggleSideMenu()"
-    *ngIf="showSideMenu"
-  >
-
-  </div>
-</div>
+  </ul>
+</nav>
