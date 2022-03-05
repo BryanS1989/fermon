@@ -24,7 +24,7 @@
         {{banner.text}}
       </p>
 
-      <a *ngIf="banner.button" [routerLink]="banner.button.route" class="banner-button">{{banner.button.text}}</a>
+      <a *ngIf="banner.button" [routerLink]="banner.button.route" class="image-button">{{banner.button.text}}</a>
 
       <picture *ngIf="banner.image">
         <source media="(min-width: 1023px)" srcset="../../../assets/images/banners/{{banner.image}}_1440.jpg">
