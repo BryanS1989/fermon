@@ -17,7 +17,7 @@
     </picture>
   </ng-template>
 
-  <div class="product-card-info">
+  <div class="product-card-info flex-col">
 
     <h2 *ngIf="product.name" class="product-card-name">
       {{product.name}}
@@ -31,7 +31,7 @@
       <p class="product-card-price">
         {{product.price}}
       </p>
-      <fa-icon [icon]="currencyIcon" [classes]="['fa-xl']" class="product-card-currency"></fa-icon>
+      <fa-icon [icon]="currencyIcon" [classes]="['fa-md']" class="product-card-currency"></fa-icon>
     </div>
 
   </div>
