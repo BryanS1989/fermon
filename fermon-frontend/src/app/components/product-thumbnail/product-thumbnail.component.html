@@ -1,0 +1,38 @@
+<a class="product-card neumorphism flex-col"
+  [routerLink]="['/product', product.id]"
+>
+  <picture *ngIf="product.image; else elseBlock"
+    class="product-card-image-container"
+  >
+    <source media="(min-width: 1023px)" srcset="../../../assets/images/logos/{{product.image}}_300.png">
+    <source media="(min-width: 767px)" srcset="../../../assets/images/logos/{{product.image}}_200.png">
+    <img src="../../../assets/images/logos/{{product.image}}_200.png" class="product-card-image neumorphism-inverse"/>
+  </picture>
+
+  <ng-template #elseBlock>
+    <picture class="product-card-image-container">
+      <source media="(min-width: 1023px)" srcset="../../../assets/images/logos/FERMON_LOGO_300.png">
+      <source media="(min-width: 767px)" srcset="../../../assets/images/logos/FERMON_LOGO_200.png">
+      <img src="../../../assets/images/logos/FERMON_LOGO_200.png" class="product-card-image neumorphism-inverse"/>
+    </picture>
+  </ng-template>
+
+  <div class="product-card-info">
+
+    <h2 *ngIf="product.name" class="product-card-name">
+      {{product.name}}
+    </h2>
+
+    <p *ngIf="product.shortDescription" class="product-card-description">
+      {{product.shortDescription}}
+    </p>
+
+    <div *ngIf="product.price && product.currency" class="product-card-price-currency neumorphism capsule flex-row">
+      <p class="product-card-price">
+        {{product.price}}
+      </p>
+      <fa-icon [icon]="currencyIcon" [classes]="['fa-xl']" class="product-card-currency"></fa-icon>
+    </div>
+
+  </div>
+</a>
