@@ -11,7 +11,7 @@ export class AsideComponent implements OnInit {
 
   menuClose = faXmark;
 
-  showSideMenu = true;
+  showSideMenu = false;
 
   constructor() { }
 
