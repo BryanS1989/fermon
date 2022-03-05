@@ -234,3 +234,33 @@ input{
   transform: scale(1.1);
   transition: transform 0.5s;
 }
+
+/*----------------------------------------------------------------------------*/
+/*---                                                                      ---*/
+/*---                             CUSTOM  SCROLL                           ---*/
+/*---                                                                      ---*/
+/*----------------------------------------------------------------------------*/
+/* width */
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  margin: 10vh 0;
+  border-radius: 5rem;
+  border: 1px solid #444444;
+  box-shadow: inset 5px 5px 10px #cacaca,
+              inset -5px -5px 10px #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0080bc;
+  border-radius: 5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #444444;
+}
