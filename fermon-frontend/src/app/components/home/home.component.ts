@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  banners = [
+  banners : any = [
     {
       title: "FERRETERIA FERMON S.L.",
       cite: "El servicio al cliente es nuestra máxima prioridad",
@@ -35,6 +35,66 @@ export class HomeComponent implements OnInit {
       image: "BANNER_IMAGE_3"
     }
   ];
+
+  products : any = [
+    {
+      id : 0,
+      name : "Tornillo DIN 7985 Inox",
+      shortDescription : "3mm de diametro",
+      price : "0.5",
+      currency : "euro"
+    },
+    {
+      id : 1,
+      name : "Arandela DIN 125 Inox",
+      shortDescription : "5mm de diametro",
+      price : "0.25",
+      currency : "euro"
+    },
+    {
+      id : 2,
+      name : "TUERCA DIN 985 INOX",
+      shortDescription : "15mm de diametro",
+      price : "0.95",
+      currency : "euro"
+    },
+    {
+      id : 3,
+      name : "Varilla roscada DIN 975 Inox",
+      shortDescription : "2cm de largo",
+      price : "1.25",
+      currency : "euro"
+    },
+    {
+      id : 4,
+      name : "Pistola 'ERGO GARDEN'",
+      shortDescription : "Con tres modos de dispersión",
+      price : "19.95",
+      currency : "euro"
+    }
+  ];
+
+  productSliderConfig : any = {
+    title : "Los mejores productos",
+    button : {
+      route: "/legal/policy"
+    }
+  };
+/*
+  productSliderConfig = {
+    title : "Los mejores productos",
+    banner : {
+      image : null,
+      button : {
+        text: null,
+        route: null
+      },
+    },
+    button : {
+      route: "/legal/policy"
+    }
+  };
+*/
 
   constructor() { }
 

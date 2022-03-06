@@ -1,0 +1,47 @@
+<article>
+  <section class="product-slider flex-col">
+
+    <h1 *ngIf="productSliderConfig.title"
+      class="product-slider-title"
+    >
+      {{productSliderConfig.title}}
+    </h1>
+
+    <div *ngIf="productSliderConfig.banner"
+    class="product-slider-image-container flex-col"
+    >
+
+      <picture *ngIf="productSliderConfig.banner.image">
+        <source media="(min-width: 1023px)" srcset="../../../assets/images/{{productSliderConfig.banner.image}}_768.jpg">
+        <source media="(min-width: 767px)" srcset="../../../assets/images/{{productSliderConfig.banner.image}}_425.jpg">
+        <img src="../../../assets/images/{{productSliderConfig.banner.image}}_425.jpg" class="product-slider-image"/>
+      </picture>
+
+      <a *ngIf="productSliderConfig.banner.button"
+        [routerLink]="productSliderConfig.banner.button.route"
+        class="product-slider-image-button image-button image-button-secondary"
+      >
+        {{productSliderConfig.banner.button.text}}
+      </a>
+    </div>
+
+    <ul *ngIf="products"
+      class="product-slider-list flex-row"
+    >
+      <li class="product-item"
+        *ngFor="let product of products"
+      >
+        <app-product-thumbnail [product]="product"></app-product-thumbnail>
+      </li>
+      <li class="product-slider-list-more">
+        <a *ngIf="productSliderConfig.button"
+          [routerLink]="productSliderConfig.button.route"
+          class="product-slider-list-more-button neumorphism neumorphism-hover capsule flex-row"
+        >
+          <fa-icon [icon]="moreIcon" [classes]="['fa-2x']"></fa-icon>
+        </a>
+      </li>
+    </ul>
+
+  </section>
+</article>

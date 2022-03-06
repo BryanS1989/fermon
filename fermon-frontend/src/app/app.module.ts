@@ -16,6 +16,8 @@ import { LegalComponent } from './components/legal/legal.component';
 import { BannerSliderComponent } from './components/banner-slider/banner-slider.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { ProductThumbnailComponent } from './components/product-thumbnail/product-thumbnail.component';
+import { ProductSliderComponent } from './components/product-slider/product-slider.component';
+import { BannerFlipComponent } from './components/banner-flip/banner-flip.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ProductThumbnailComponent } from './components/product-thumbnail/produc
     LegalComponent,
     BannerSliderComponent,
     SearchBarComponent,
-    ProductThumbnailComponent
+    ProductThumbnailComponent,
+    ProductSliderComponent,
+    BannerFlipComponent
   ],
   imports: [
     BrowserModule,
