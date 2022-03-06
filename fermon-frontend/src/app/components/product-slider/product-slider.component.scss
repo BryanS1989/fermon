@@ -41,6 +41,8 @@
   height: 25rem;
   width: 100%;
   overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 1rem 0;
 
   .product-item {
     padding: 1rem;
@@ -49,7 +51,6 @@
   .product-slider-list-more-button {
     text-align: center;
     padding: 1rem;
-    margin: 1rem;
   }
 }
 
