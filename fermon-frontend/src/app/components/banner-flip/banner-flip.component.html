@@ -1,0 +1,20 @@
+<article class="banner-flip-container">
+  <section class="banner-flip-item">
+    <div class="banner-flip-front">
+      <picture *ngIf="bannerFlipConfig.front.image">
+        <source media="(min-width: 1023px)" srcset="../../../assets/images/banners/{{bannerFlipConfig.front.image}}_1440.jpg">
+        <source media="(min-width: 767px)" srcset="../../../assets/images/banners/{{bannerFlipConfig.front.image}}_768.jpg">
+        <source media="(min-width: 767px)" srcset="../../../assets/images/banners/{{bannerFlipConfig.front.image}}_425.jpg">
+        <img src="../../../assets/images/banners/{{bannerFlipConfig.front.image}}_425.jpg" class="banner-image"/>
+      </picture>
+    </div>
+    <div class="banner-flip-back">
+      <picture *ngIf="bannerFlipConfig.back.image">
+        <source media="(min-width: 1023px)" srcset="../../../assets/images/banners/{{bannerFlipConfig.back.image}}_1440.jpg">
+        <source media="(min-width: 767px)" srcset="../../../assets/images/banners/{{bannerFlipConfig.back.image}}_768.jpg">
+        <source media="(min-width: 767px)" srcset="../../../assets/images/banners/{{bannerFlipConfig.back.image}}_425.jpg">
+        <img src="../../../assets/images/banners/{{bannerFlipConfig.back.image}}_425.jpg" class="banner-image"/>
+      </picture>
+    </div>
+  </section>
+</article>

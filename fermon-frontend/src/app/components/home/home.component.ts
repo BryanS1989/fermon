@@ -96,6 +96,15 @@ export class HomeComponent implements OnInit {
   };
 */
 
+  bannerFlipConfig : any = {
+    front : {
+      image: "BANNER_IMAGE_1"
+    },
+    back : {
+      image: "BANNER_IMAGE_2"
+    }
+  };
+
   constructor() { }
 
   ngOnInit(): void {
