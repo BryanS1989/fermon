@@ -99,6 +99,26 @@ input{
   justify-content: space-around;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/*----------------------------------------------------------------------------*/
+/*---                                                                      ---*/
+/*---                             BANNER IMAGES                            ---*/
+/*---                                                                      ---*/
+/*----------------------------------------------------------------------------*/
+
+.banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  object-fit: cover;
+}
+
 /*----------------------------------------------------------------------------*/
 /*---                                                                      ---*/
 /*---                            NEUMORPHISM                               ---*/
@@ -206,10 +226,6 @@ input{
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-around;
-}
-
-.overflow-hidden {
-  overflow: hidden;
 }
 
 /*----------------------------------------------------------------------------*/
