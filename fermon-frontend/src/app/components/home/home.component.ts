@@ -80,21 +80,20 @@ export class HomeComponent implements OnInit {
       route: "/legal/policy"
     }
   };
-/*
-  productSliderConfig = {
-    title : "Los mejores productos",
+
+  productSliderConfig2 = {
+    title : "Tornillería",
     banner : {
-      image : null,
+      image : "BANNER_IMAGE_3",
       button : {
-        text: null,
-        route: null
+        text: "VER CATEGORIA",
+        route: "/legal/cookies"
       },
     },
     button : {
       route: "/legal/policy"
     }
   };
-*/
 
   bannerFlipConfig : any = {
     front : {

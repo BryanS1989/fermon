@@ -1,0 +1,155 @@
+<article class="contact-form-container">
+  <section class="contact-form flex-col neumorphism">
+    <h1 class="form-title">¿Necesitas más información?</h1>
+    <form [formGroup]="contactForm"
+      class="flex-col form-contact-form"
+      (ngSubmit)="sendContactForm()"
+    >
+      <fieldset
+        formGroupName="client"
+        class="client-info-contact flex-col"
+      >
+        <div class="input-form">
+          <input type="text"
+            id="nameContact"
+            formControlName="nameContact"
+            class="neumorphism-inverse capsule"
+            [placeholder]="formText.nameContactLabel"
+          >
+          <div *ngIf="nameContact?.invalid && (nameContact?.dirty || nameContact?.touched)"
+            class="input-form-error flex-col"
+          >
+            <div *ngIf="nameContact?.errors?.['required']">
+              <fa-icon [icon]="iconInvalid" [classes]="['fa-2x', 'fa-fade']"></fa-icon>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-form">
+          <input type="email"
+            id="emailContact"
+            formControlName="emailContact"
+            class="neumorphism-inverse capsule"
+            [placeholder]="formText.emailContactLabel"
+          >
+          <div *ngIf="emailContact?.invalid && (emailContact?.dirty || emailContact?.touched)"
+            class="input-form-error flex-col"
+          >
+            <div *ngIf="emailContact?.errors?.['required'] || emailContact?.errors?.['email']">
+              <fa-icon [icon]="iconInvalid" [classes]="['fa-2x', 'fa-fade']"></fa-icon>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-form">
+          <input type="tel"
+            id="phoneContact"
+            formControlName="phoneContact"
+            class="neumorphism-inverse capsule"
+            [placeholder]="formText.phoneContactLabel"
+          >
+          <div *ngIf="phoneContact?.invalid && (phoneContact?.dirty || phoneContact?.touched)"
+            class="input-form-error flex-col"
+          >
+            <div *ngIf="phoneContact?.errors?.['required'] || phoneContact?.errors?.['pattern']">
+              <fa-icon [icon]="iconInvalid" [classes]="['fa-2x', 'fa-fade']"></fa-icon>
+            </div>
+          </div>
+        </div>
+
+      </fieldset>
+
+      <fieldset
+        formGroupName="message"
+        class="content-message-contact flex-col"
+      >
+        <!--
+          <div class="input-form">
+            <input type="text"
+              id="subjectContact"
+              formControlName="subjectContact"
+              class="neumorphism-inverse capsule"
+              [placeholder]="formText.content.subjectContactLabel"
+            >
+          </div>
+        -->
+
+        <div class="input-form">
+          <textarea type="text"
+            id="messageContact"
+            formControlName="messageContact"
+            class="neumorphism-inverse form-contact-message"
+            [placeholder]="formText.content.messageContactLabel"
+          ></textarea>
+          <div *ngIf="messageContact?.invalid && (messageContact?.dirty || messageContact?.touched)"
+            class="input-form-error flex-col"
+          >
+            <div *ngIf="messageContact?.errors?.['required'] || messageContact?.errors?.['minlength'] || messageContact?.errors?.['maxlength']">
+              <fa-icon [icon]="iconInvalid" [classes]="['fa-2x', 'fa-fade']"></fa-icon>
+            </div>
+          </div>
+        </div>
+
+      </fieldset>
+
+      <fieldset
+        formGroupName="legalInfo"
+        class="legal-info-contact flex-col"
+      >
+        <div class="checkbox-legal-info">
+          <input type="checkbox"
+            id="commercialContact"
+            formControlName="commercialContact"
+          >
+          <label for="commercialContact">
+            {{formText.checkboxes.commercialContactLabel}}
+          </label>
+        </div>
+
+        <div class="checkbox-legal-info">
+          <input type="checkbox"
+            id="legalContact"
+            formControlName="legalContact"
+          >
+          <label for="legalContact">
+            {{formText.checkboxes.legalContactLabel}}
+            <a (click)="toggleLegalTerms()">
+              {{formText.checkboxes.legalContactLink}}
+            </a>
+            *
+          </label>
+        </div>
+      </fieldset>
+
+      <div *ngIf="legalTermsVisible"
+        class="legalTermsText neumorphism-inverse"
+      >
+        <h2>CONSENTIMIENTO PARA TRATAR LOS DATOS PERSONALES.</h2>
+        <p>
+          La comunicación enviada quedará incorporada a un fichero del que es responsable
+          <b>SUMINISTROS FERMON S.L.</b>. Esta comunicación se utilizará exclusivamente
+          para tratar sus datos para atender su solicitud, siempre de acuerdo al Reglamento
+          (<abbr title="Unión Europea">UE</abbr>) 2016/679
+          (<abbr title="Reglamento General de Protección de Datos">RGPD</abbr>),
+          la Ley Orgánica 15/1999 (<abbr title="Ley Orgánica de Protección de Datos de Carácter Personal">LOPD</abbr>)
+          y el Real Decreto 1720/2007 de desarrollo de la LOPD), sobre protección de datos.
+          Sus datos no se comunicaran a terceros, excepto por obligación legal, y se mantendrán
+          mientras no solicite su cancelación.
+        </p>
+        <p>
+          En cualquier momento usted puede ejercer los derechos de acceso, rectificación,
+          portabilidad y oposición, o si procede, a la limitación y/o cancelación del tratamiento,
+          comunicándolo por escrito, indicando sus datos personales a
+          AVDA. APELES MESTRES, 9 o mediante un email a <a href="mailto:info@ferreteriafermon.com">info@ferreteriafermon.com</a>.
+        </p>
+      </div>
+
+      <button type="submit"
+        [disabled]="!contactForm.valid"
+        class="button-submit neumorphism neumorphism-hover capsule"
+      >
+        ENVIAR
+      </button>
+    </form>
+  </section>
+</article>

@@ -1,0 +1,87 @@
+.contact-form-container {
+  padding: 1.5rem;
+}
+
+.contact-form {
+  background-color: #0080bc;
+  padding-bottom: 1.5rem;
+  border-radius: 2rem;
+}
+
+.form-contact-form {
+  width: 90%;
+}
+
+.form-title {
+  color: #f1f1f1;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.legal-info-contact {
+  margin-bottom: 1rem;
+
+  .checkbox-legal-info {
+    width: 100%;
+  }
+
+  label,
+  a {
+    color: #f1f1f1;
+  }
+
+  a {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  input.ng-touched.ng-invalid + label,
+  input.ng-touched.ng-invalid + label a {
+    color: red;
+  }
+
+}
+
+.client-info-contact,
+.content-message-contact {
+  padding: 0.5rem 0;
+
+  & input,
+  & textarea {
+    margin: 0.2rem;
+    width: 100%;
+  }
+}
+
+.input-form {
+  position: relative;
+  width: 100%;
+
+  .input-form-error {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    height: 100%;
+    color: red;
+  }
+}
+
+.legalTermsText {
+  font-family: 'Ubuntu Condensed', sans-serif;
+  text-align: justify;
+  text-justify: distribute-all-lines;
+  padding: 1rem;
+  color: #0080bc;
+  background-color: #f1f1f1;
+  border-radius: 1rem;
+
+  h2 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+}

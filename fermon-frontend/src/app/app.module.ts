@@ -18,6 +18,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { ProductThumbnailComponent } from './components/product-thumbnail/product-thumbnail.component';
 import { ProductSliderComponent } from './components/product-slider/product-slider.component';
 import { BannerFlipComponent } from './components/banner-flip/banner-flip.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BannerFlipComponent } from './components/banner-flip/banner-flip.compon
     SearchBarComponent,
     ProductThumbnailComponent,
     ProductSliderComponent,
-    BannerFlipComponent
+    BannerFlipComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
