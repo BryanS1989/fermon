@@ -79,10 +79,37 @@ a {
   }
 }
 
-input{
+input,
+textarea{
   border: none;
   outline: none;
   background-color: #f1f1f1;
+  padding: 0.7rem;
+  font-size: 1.2rem;
+  font-family: 'Signika Negative', sans-serif;
+  color: #0080bc;
+}
+
+::placeholder,
+label {
+  color: #0080bc;
+  display: inline-block;
+}
+
+fieldset {
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+  height: 10rem;
+  border-radius: 1rem;
+}
+
+button:disabled {
+  box-shadow: inset 5px 5px 10px #cacaca,
+              inset -5px -5px 10px #ffffff;
+  color: #bababa;
 }
 
 .flex-row {
@@ -226,6 +253,23 @@ input{
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-around;
+}
+
+/*----------------------------------------------------------------------------*/
+/*---                                                                      ---*/
+/*---                                FORM BUTTON                           ---*/
+/*---                                                                      ---*/
+/*----------------------------------------------------------------------------*/
+.button-submit {
+  background-color: #f1f1f1;
+  color: #0080bc;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+  margin: 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 /*----------------------------------------------------------------------------*/
