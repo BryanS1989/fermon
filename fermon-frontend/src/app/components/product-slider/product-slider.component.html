@@ -12,9 +12,9 @@
     >
 
       <picture *ngIf="productSliderConfig.banner.image">
-        <source media="(min-width: 1023px)" srcset="../../../assets/images/{{productSliderConfig.banner.image}}_768.jpg">
-        <source media="(min-width: 767px)" srcset="../../../assets/images/{{productSliderConfig.banner.image}}_425.jpg">
-        <img src="../../../assets/images/{{productSliderConfig.banner.image}}_425.jpg" class="product-slider-image"/>
+        <source media="(min-width: 1023px)" srcset="../../../assets/images/banners/{{productSliderConfig.banner.image}}_768.jpg">
+        <source media="(min-width: 767px)" srcset="../../../assets/images/banners/{{productSliderConfig.banner.image}}_425.jpg">
+        <img src="../../../assets/images/banners/{{productSliderConfig.banner.image}}_425.jpg" class="product-slider-image"/>
       </picture>
 
       <a *ngIf="productSliderConfig.banner.button"
