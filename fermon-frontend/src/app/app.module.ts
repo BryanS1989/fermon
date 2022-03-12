@@ -19,6 +19,7 @@ import { ProductThumbnailComponent } from './components/product-thumbnail/produc
 import { ProductSliderComponent } from './components/product-slider/product-slider.component';
 import { BannerFlipComponent } from './components/banner-flip/banner-flip.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ContactComponent } from './components/contact/contact.component';
     ProductThumbnailComponent,
     ProductSliderComponent,
     BannerFlipComponent,
-    ContactComponent
+    ContactComponent,
+    ScrollToTopComponent
   ],
   imports: [
     BrowserModule,
