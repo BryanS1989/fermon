@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
       text: "En Ferreteria FERMON S.L encontrarás las primeras marcas del sector",
       button: {
         text: "MARCAS",
-        route: "legal/policy"
+        route: "contact"
       },
       image: "BANNER_IMAGE_2"
     },
