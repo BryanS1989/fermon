@@ -1,0 +1,10 @@
+<select type="text"
+  [formControl]="quantitySelector"
+  (change)="emitSelectedQuantity()"
+  class="product-quantity"
+>
+  <option
+    *ngFor="let quantityValue of quantitySelectorValues"
+    [value]="quantityValue"
+  >{{ quantityValue }}</option>
+</select>
