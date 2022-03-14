@@ -22,9 +22,6 @@ export class RateProductComponent implements OnInit {
     var decimalRate : boolean = ( this.rate % 1 ) > 0;
     var starRate : any[] = [];
 
-    console.log("integerRate: " + integerRate);
-    console.log("decimalRate: " + decimalRate);
-
     for (let index = 0; index < 5; index++) {
       var icon : IconDefinition = farStar;
 
@@ -39,7 +36,6 @@ export class RateProductComponent implements OnInit {
       });
     }
 
-    console.log(starRate);
     this.starsConfig = starRate;
   }
 
