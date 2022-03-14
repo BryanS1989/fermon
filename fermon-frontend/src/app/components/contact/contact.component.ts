@@ -18,7 +18,7 @@ export class ContactComponent implements OnInit {
     client : new FormGroup({
       nameContact: new FormControl('', Validators.required),
       emailContact: new FormControl('', [Validators.required, Validators.email]),
-      phoneContact: new FormControl('', [Validators.required, Validators.pattern("^(\\+34)[0-9 -]{9,13}$")])
+      phoneContact: new FormControl('', [Validators.required, Validators.pattern("^(\\+34)[0-9]{9}$")])
     }),
     message : new FormGroup({
       subjectContact: new FormControl(''),
