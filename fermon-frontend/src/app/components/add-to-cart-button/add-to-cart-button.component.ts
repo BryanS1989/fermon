@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { Location } from '@angular/common';
 
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+
 @Component({
   selector: 'app-add-to-cart-button',
   templateUrl: './add-to-cart-button.component.html',
@@ -11,6 +13,8 @@ export class AddToCartButtonComponent implements OnInit {
 
   @Input() quantitySelected : number = 0;
   @Input() productId : number = 0;
+
+  addToCartIcon = faCartPlus;
 
   addToCartButton = "Añadir al carrito";
 

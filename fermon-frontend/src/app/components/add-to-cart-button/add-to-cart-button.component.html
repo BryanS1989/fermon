@@ -1,5 +1,13 @@
-<button class="add-to-cart-button neumorphism neumorphism-hover capsule"
+<button class="add-to-cart-button flex-row neumorphism neumorphism-hover capsule"
   (click)="addToCartProduct()"
   >
-  {{ addToCartButton }}
+  <fa-icon
+    [icon]="addToCartIcon"
+    [classes]="['fa-2x', 'fa-beat']"
+    class="addToCartButtonIcon"
+  >
+  </fa-icon>
+  <p class="addToCartButtonText">
+    {{ addToCartButton }}
+  </p>
 </button>

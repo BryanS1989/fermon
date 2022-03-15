@@ -106,6 +106,10 @@ textarea {
   border-radius: 1rem;
 }
 
+select {
+  font-family: 'Signika Negative', sans-serif;
+}
+
 button:disabled {
   box-shadow: inset 5px 5px 10px #cacaca,
               inset -5px -5px 10px #ffffff;
@@ -284,9 +288,11 @@ button:disabled {
 /*----------------------------------------------------------------------------*/
 /*---                                                                      ---*/
 /*---                                FORM BUTTON                           ---*/
+/*---                             BUTTON ADD TO CART                       ---*/
 /*---                                                                      ---*/
 /*----------------------------------------------------------------------------*/
-.button-submit {
+.button-submit,
+.add-to-cart-button {
   background-color: #f1f1f1;
   color: #0080bc;
   padding: 1rem;
@@ -296,6 +302,7 @@ button:disabled {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1rem;
+  font-family: 'Signika Negative', sans-serif;
 }
 
 /*----------------------------------------------------------------------------*/
