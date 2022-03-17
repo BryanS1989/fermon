@@ -1,0 +1,104 @@
+<article>
+  <section class="product-detail neumorphism flex-col">
+    <header>
+      <h1
+        *ngIf="productDetail.name"
+        class="product-detail-name"
+      >
+        {{productDetail.name}}
+      </h1>
+    </header>
+
+    <picture *ngIf="productDetail.image; else defaultProudctImage">
+      <source media="(min-width: 1023px)" srcset="../../../assets/images/banners/{{productDetail.image}}_1440.jpg">
+      <source media="(min-width: 767px)" srcset="../../../assets/images/banners/{{productDetail.image}}_768.jpg">
+      <source media="(min-width: 767px)" srcset="../../../assets/images/banners/{{productDetail.image}}_425.jpg">
+      <img src="../../../assets/images/banners/{{productDetail.image}}_425.jpg" class="product-detail-image neumorphism-inverse"/>
+    </picture>
+    <ng-template #defaultProudctImage>
+      <picture>
+        <source media="(min-width: 1023px)" srcset="../../../assets/images/banners/{{productDetailDefaultImage}}_1440.jpg">
+        <source media="(min-width: 767px)" srcset="../../../assets/images/banners/{{productDetailDefaultImage}}_768.jpg">
+        <source media="(min-width: 767px)" srcset="../../../assets/images/banners/{{productDetailDefaultImage}}_425.jpg">
+        <img src="../../../assets/images/banners/{{productDetailDefaultImage}}_425.jpg" class="product-detail-image neumorphism-inverse"/>
+      </picture>
+    </ng-template>
+
+
+    <div class="product-detail-info">
+      <dl>
+        <div *ngIf="productDetail.reference" class="product-detail-info-row">
+          <dt>
+            Ref
+          </dt>
+          <dd class="neumorphism-inverse">
+            {{ productDetail.reference }}
+          </dd>
+        </div>
+
+        <div *ngIf="productDetail.shortDescription" class="product-detail-info-row">
+          <dt>
+            Detalle
+          </dt>
+          <dd class="neumorphism-inverse">
+            {{ productDetail.shortDescription }}
+          </dd>
+        </div>
+
+        <div *ngIf="productDetail.rate" class="product-detail-info-row">
+          <dt>
+            Valoración
+          </dt>
+          <dd class="neumorphism-inverse text-align-center">
+            <app-rate-product [rate]="productDetail.rate"
+              [editable]="false"
+            ></app-rate-product>
+          </dd>
+        </div>
+
+        <div *ngIf="productDetail.price" class="product-detail-info-row">
+          <dt>
+            Precio
+          </dt>
+          <dd class="neumorphism-inverse text-align-center">
+            <p class="product-detail-price">
+              {{ productDetail.price *  quantitySelected}}
+            </p>
+            <fa-icon [icon]="currencyIcon" [classes]="['fa-md']" class="product-detail-currency"></fa-icon>
+          </dd>
+        </div>
+
+        <div class="product-detail-info-row">
+          <dt>
+            Seleccione una cantidad
+          </dt>
+          <dd class="neumorphism-inverse">
+            <app-quantity-selector
+              (quantitySelectedEvent)="getSelectedQuantity($event)"
+            ></app-quantity-selector>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <app-add-to-cart-button
+      [productId]="productDetail.id"
+      [quantitySelected]="quantitySelected"
+    ></app-add-to-cart-button>
+
+  </section>
+
+  <app-product-reviews
+    [productId]="productDetail.id"
+  ></app-product-reviews>
+
+  <app-product-slider
+    [productSliderConfig]="productSliderConfig"
+    [products]="products"
+  ></app-product-slider>
+
+  <app-product-slider
+    [productSliderConfig]="productSliderConfig2"
+    [products]="products"
+  ></app-product-slider>
+</article>

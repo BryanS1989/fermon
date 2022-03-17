@@ -20,6 +20,11 @@ import { ProductSliderComponent } from './components/product-slider/product-slid
 import { BannerFlipComponent } from './components/banner-flip/banner-flip.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { RateProductComponent } from './components/rate-product/rate-product.component';
+import { QuantitySelectorComponent } from './components/quantity-selector/quantity-selector.component';
+import { AddToCartButtonComponent } from './components/add-to-cart-button/add-to-cart-button.component';
+import { ProductReviewsComponent } from './components/product-reviews/product-reviews.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +41,12 @@ import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.c
     ProductSliderComponent,
     BannerFlipComponent,
     ContactComponent,
-    ScrollToTopComponent
+    ScrollToTopComponent,
+    ProductDetailComponent,
+    RateProductComponent,
+    QuantitySelectorComponent,
+    AddToCartButtonComponent,
+    ProductReviewsComponent
   ],
   imports: [
     BrowserModule,
