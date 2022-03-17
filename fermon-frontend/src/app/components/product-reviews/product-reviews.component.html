@@ -1,0 +1,33 @@
+<article class="product-reviews-container flex-col" *ngIf="productReviews.length">
+  <h1 class="product-review-title text-align-center">
+    {{ productReviewTitle }}
+  </h1>
+  <section class="product-review-item neumorphism"
+    *ngFor="let review of productReviewsToShow"
+  >
+    <header class="product-review-header">
+      <h2 class="review-user-name">
+        {{review.user}}
+      </h2>
+      <div class="review-user-rate">
+        <app-rate-product [rate]="review.rate"
+          [editable]="false"
+        ></app-rate-product>
+      </div>
+      <input type="date"
+        value="{{review.date}}"
+        class="review-user-date"
+        disabled
+      >
+    </header>
+    <p class="review-user-text neumorphism-inverse">
+      {{ review.text }}
+    </p>
+  </section>
+  <a *ngIf="showLoadButton"
+    class="product-review-more-button neumorphism neumorphism-hover capsule flex-row"
+    (click)="loadMoreItems()"
+  >
+    <fa-icon [icon]="moreIcon" [classes]="['fa-2x']"></fa-icon>
+  </a>
+</article>
