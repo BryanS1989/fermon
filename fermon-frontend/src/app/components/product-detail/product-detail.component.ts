@@ -28,7 +28,7 @@ export class ProductDetailComponent implements OnInit {
   productSliderConfig : any = {
     title : "También te recomendamos...",
     button : {
-      route: "/legal/policy"
+      route: "/products"
     }
   };
 
@@ -38,11 +38,11 @@ export class ProductDetailComponent implements OnInit {
       image : "BANNER_IMAGE_3",
       button : {
         text: "VER CATEGORIA",
-        route: "/legal/cookies"
+        route: "/products/category/2"
       },
     },
     button : {
-      route: "/legal/policy"
+      route: "/products"
     }
   };
 

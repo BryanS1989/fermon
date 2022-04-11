@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
   productSliderConfig : any = {
     title : "Los mejores productos",
     button : {
-      route: "/legal/policy"
+      route: "/products"
     }
   };
 
@@ -87,11 +87,11 @@ export class HomeComponent implements OnInit {
       image : "BANNER_IMAGE_3",
       button : {
         text: "VER CATEGORIA",
-        route: "/legal/cookies"
+        route: "/products/category/2"
       },
     },
     button : {
-      route: "/legal/policy"
+      route: "/products"
     }
   };
 
