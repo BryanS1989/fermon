@@ -1,0 +1,51 @@
+<article class="filters"
+>
+  <header class="filters-title text-align-center"
+    (click)="toggleFilters(0)"
+  >
+    <fa-icon [icon]="filterIcon" [classes]="['fa-md']"></fa-icon>
+    <p *ngIf="!showFilters[0]; else filterVisibleTitle">VER FILTROS</p>
+    <ng-template #filterVisibleTitle>
+      <p>FILTROS</p>
+    </ng-template>
+  </header>
+  <section *ngIf="showFilters[0]">
+    <section *ngFor="let filter of filters; let i = index"
+      class="filter-section"
+    >
+      <p class="filter-title text-align-center"
+        (click)="toggleFilters(i + 1)"
+      >
+        {{ filter }}
+      </p>
+      <div *ngIf="showFilters[i + 1]">
+        <app-product-categories
+          *ngIf="i === 0"
+          (selectedCategory)="filterCategory($event)"
+        ></app-product-categories>
+        <div
+          *ngIf="i === 1"
+        >
+        </div>
+        <div
+          *ngIf="i === 2"
+        >
+        </div>
+    </div>
+    </section>
+  </section>
+</article>
+<!--
+  <nav>
+    <ul id="categoryBreadcrumb"
+      class="flex-row justify-content-start"
+    >
+      <li *ngFor="let category of selectedCategoryTitles; let i = index ">
+        {{ category.title }}
+        <span *ngIf="i !== ( selectedCategoryTitles.length - 1 )">
+          >>
+        </span>
+      </li>
+    </ul>
+  </nav>
+-->
