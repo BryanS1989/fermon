@@ -25,6 +25,10 @@ import { RateProductComponent } from './components/rate-product/rate-product.com
 import { QuantitySelectorComponent } from './components/quantity-selector/quantity-selector.component';
 import { AddToCartButtonComponent } from './components/add-to-cart-button/add-to-cart-button.component';
 import { ProductReviewsComponent } from './components/product-reviews/product-reviews.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductFilterComponent } from './components/product-filter/product-filter.component';
+import { ProductCategoriesComponent } from './components/product-categories/product-categories.component';
+import { ProductCategoryNodeComponent } from './components/product-category-node/product-category-node.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +50,11 @@ import { ProductReviewsComponent } from './components/product-reviews/product-re
     RateProductComponent,
     QuantitySelectorComponent,
     AddToCartButtonComponent,
-    ProductReviewsComponent
+    ProductReviewsComponent,
+    ProductListComponent,
+    ProductFilterComponent,
+    ProductCategoriesComponent,
+    ProductCategoryNodeComponent
   ],
   imports: [
     BrowserModule,
