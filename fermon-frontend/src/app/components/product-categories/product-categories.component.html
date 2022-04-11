@@ -1,0 +1,10 @@
+<nav>
+  <ul class="categories-list">
+    <app-product-category-node
+      *ngFor="let categoryItem of categories"
+      [item]="categoryItem"
+      [depth]="0"
+      (selectedCategory)="setSelectedCategory($event)"
+    ></app-product-category-node>
+  </ul>
+</nav>
