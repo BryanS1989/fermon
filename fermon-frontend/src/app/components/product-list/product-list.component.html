@@ -1,0 +1,34 @@
+<article class="products-container">
+  <header>
+    <h1 class="products-title">
+      {{ productsTitle }}
+    </h1>
+
+    <nav class="filters neumorphism">
+      <app-product-filter
+        [products]="products"
+        [preselectedCategory]="preselectedCategory"
+        (filteredProducts)="setFilteredProducts($event)"
+      >
+      </app-product-filter>
+    </nav>
+  </header>
+
+  <article>
+    <section class="flex-row" *ngIf="filteredProducts.length > 0; else noProducts">
+      <ul class="product-slider-list flex-row">
+        <li class="product-item"
+          *ngFor="let product of filteredProducts"
+        >
+          <app-product-thumbnail [product]="product"></app-product-thumbnail>
+        </li>
+      </ul>
+    </section>
+    <ng-template #noProducts>
+      <section class="flex-row">
+        <p>NO HAY PRODUCTOS</p>
+      </section>
+    </ng-template>
+  </article>
+
+</article>

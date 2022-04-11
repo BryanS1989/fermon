@@ -1,0 +1,25 @@
+.products-title {
+  padding: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100%;
+  background-color: #0080bc;
+  color: #f1f1f1;
+}
+
+.product-slider-list {
+  width: 100%;
+  padding: 1rem 0;
+
+  .product-item {
+    padding: 1rem;
+  }
+
+  .product-slider-list-more-button {
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
