@@ -54,6 +54,20 @@ export class ProductFilterComponent implements OnInit {
     this.filteredProducts.emit(result);
   }
 
+  filterBrand(brand : any) {
+    console.log('[ProductFilterComponent] filterBrand([' + brand.title + '])');
+
+    if (!brand) {
+      this.filteredProducts.emit(this.products);
+    }
+
+    let result = this.products.filter((product : any) => {
+        return product.brandId === brand.id;
+    });
+
+    this.filteredProducts.emit(result);
+  }
+
   toggleFilters(filterIndex : number) : void {
     this.showFilters[filterIndex] = !this.showFilters[filterIndex];
   }

@@ -1,0 +1,14 @@
+<nav>
+  <ul class="brands-list">
+    <li *ngFor="let brand of brands">
+      <a (click)="selectBrand(brand)"
+        class="brand-item"
+      >
+        <fa-icon [icon]="iconToShow"
+        ></fa-icon>
+
+        {{ brand.title }}
+      </a>
+    </li>
+  </ul>
+</nav>

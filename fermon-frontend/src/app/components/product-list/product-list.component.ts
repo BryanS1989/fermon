@@ -17,7 +17,8 @@ export class ProductListComponent implements OnInit {
       shortDescription : "3mm de diametro",
       price : "0.5",
       currency : "euro",
-      category : [2]
+      category : [2],
+      brandId : 0
     },
     {
       id : 1,
@@ -25,7 +26,8 @@ export class ProductListComponent implements OnInit {
       shortDescription : "5mm de diametro",
       price : "0.25",
       currency : "euro",
-      category : [1, 0]
+      category : [1, 0],
+      brandId : 0
     },
     {
       id : 2,
@@ -33,7 +35,8 @@ export class ProductListComponent implements OnInit {
       shortDescription : "15mm de diametro",
       price : "0.95",
       currency : "euro",
-      category : [1, 0]
+      category : [1, 0],
+      brandId : 1
     },
     {
       id : 3,
@@ -41,7 +44,8 @@ export class ProductListComponent implements OnInit {
       shortDescription : "2cm de largo",
       price : "1.25",
       currency : "euro",
-      category : [1, 2]
+      category : [1, 2],
+      brandId : 2
     },
     {
       id : 4,
@@ -49,7 +53,8 @@ export class ProductListComponent implements OnInit {
       shortDescription : "Con tres modos de dispersión",
       price : "19.95",
       currency : "euro",
-      category : [3, 0, 0]
+      category : [3, 0, 0],
+      brandId : 7
     },
     {
       id : 5,
@@ -57,7 +62,8 @@ export class ProductListComponent implements OnInit {
       shortDescription : "1cm de diametro",
       price : "0.1",
       currency : "euro",
-      category : [2]
+      category : [2],
+      brandId : 9
     },
   ];
 

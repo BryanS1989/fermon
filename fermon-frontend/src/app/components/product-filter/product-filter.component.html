@@ -13,7 +13,7 @@
     <section *ngFor="let filter of filters; let i = index"
       class="filter-section"
     >
-      <p class="filter-title text-align-center"
+      <p class="filters-title filter-title text-align-center"
         (click)="toggleFilters(i + 1)"
       >
         {{ filter }}
@@ -26,6 +26,10 @@
         <div
           *ngIf="i === 1"
         >
+          <app-product-brands
+            (selectedBrand)="filterBrand($event)"
+          >
+          </app-product-brands>
         </div>
         <div
           *ngIf="i === 2"
