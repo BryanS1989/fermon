@@ -299,7 +299,7 @@ export class ProductCategoriesComponent implements OnInit {
   ];
 
   @Output() selectedCategory : EventEmitter<any[]> = new EventEmitter();
-  @Output() selectedCategoryTitles : EventEmitter<any[]> = new EventEmitter();
+  @Output() selectedCategories : EventEmitter<any[]> = new EventEmitter();
 
   lastCategorySelected : any[] = [];
 
