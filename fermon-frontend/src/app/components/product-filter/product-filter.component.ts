@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { faFilter } from "@fortawesome/free-solid-svg-icons";
+import { faFilter, faFilterCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-product-filter',
@@ -14,6 +14,7 @@ export class ProductFilterComponent implements OnInit {
   @Output() filteredProducts : EventEmitter<any[]> = new EventEmitter();
 
   filterIcon = faFilter;
+  filterEraseIcon = faFilterCircleXmark;
 
   filters : string[] = [
     "CATEGORIAS",
@@ -23,7 +24,8 @@ export class ProductFilterComponent implements OnInit {
 
   showFilters : boolean[] = [];
 
-  selectedCategoryTitles : any[] = [];
+  selectedCategories : any[] = [];
+  selectedBrand : any = {};
 
   constructor() { }
 
@@ -39,7 +41,7 @@ export class ProductFilterComponent implements OnInit {
   filterCategory(selectedCategory : any[]) {
     console.log('[ProductFilterComponent] filterCategory([' + selectedCategory + '])');
 
-    this.selectedCategoryTitles = selectedCategory;
+    this.selectedCategories = selectedCategory;
 
     if (selectedCategory.length === 0) {
       this.filteredProducts.emit(this.products);
@@ -57,6 +59,8 @@ export class ProductFilterComponent implements OnInit {
   filterBrand(brand : any) {
     console.log('[ProductFilterComponent] filterBrand([' + brand.title + '])');
 
+    this.selectedBrand = brand;
+
     if (!brand) {
       this.filteredProducts.emit(this.products);
     }
@@ -69,7 +73,13 @@ export class ProductFilterComponent implements OnInit {
   }
 
   toggleFilters(filterIndex : number) : void {
-    this.showFilters[filterIndex] = !this.showFilters[filterIndex];
+    if (filterIndex === -1) {
+      this.selectedCategories = [];
+      this.selectedBrand = {};
+      this.filteredProducts.emit(this.products);
+    } else {
+      this.showFilters[filterIndex] = !this.showFilters[filterIndex];
+    }
   }
 
 }

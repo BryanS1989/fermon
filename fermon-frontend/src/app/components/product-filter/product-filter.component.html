@@ -1,19 +1,28 @@
 <article class="filters"
 >
-  <header class="filters-title text-align-center"
-    (click)="toggleFilters(0)"
-  >
-    <fa-icon [icon]="filterIcon" [classes]="['fa-md']"></fa-icon>
-    <p *ngIf="!showFilters[0]; else filterVisibleTitle">VER FILTROS</p>
-    <ng-template #filterVisibleTitle>
-      <p>FILTROS</p>
+  <header class="filters-header flex-row">
+    <div (click)="toggleFilters(0)"
+      class="filters-title"
+    >
+      <div>
+        <p>FILTROS</p>
+      </div>
+    </div>
+    <div *ngIf="!showFilters[0]; else filterErase">
+      <fa-icon [icon]="filterIcon" [classes]="['fa-md']"></fa-icon>
+    </div>
+    <ng-template #filterErase>
+      <fa-icon [icon]="filterEraseIcon" [classes]="['fa-md']"
+        (click)="toggleFilters(-1)"
+      ></fa-icon>
     </ng-template>
+
   </header>
   <section *ngIf="showFilters[0]">
     <section *ngFor="let filter of filters; let i = index"
       class="filter-section"
     >
-      <p class="filters-title filter-title text-align-center"
+      <p class="filters-header filter-title text-align-center"
         (click)="toggleFilters(i + 1)"
       >
         {{ filter }}
@@ -35,7 +44,7 @@
           *ngIf="i === 2"
         >
         </div>
-    </div>
+      </div>
     </section>
   </section>
 </article>
@@ -44,9 +53,9 @@
     <ul id="categoryBreadcrumb"
       class="flex-row justify-content-start"
     >
-      <li *ngFor="let category of selectedCategoryTitles; let i = index ">
+      <li *ngFor="let category of selectedCategories; let i = index ">
         {{ category.title }}
-        <span *ngIf="i !== ( selectedCategoryTitles.length - 1 )">
+        <span *ngIf="i !== ( selectedCategories.length - 1 )">
           >>
         </span>
       </li>
