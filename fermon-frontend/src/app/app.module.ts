@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
+import { StoreModule } from "@ngrx/store";
+import { productsReducer } from "./store/products/products.reducer";
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
@@ -65,7 +68,8 @@ import { ProductPricesComponent } from './components/product-prices/product-pric
     AppRoutingModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    StoreModule.forRoot({products: productsReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
