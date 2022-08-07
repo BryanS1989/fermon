@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FormGroup, FormControl } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 
 import { faXmark, faCheck } from "@fortawesome/free-solid-svg-icons";
@@ -14,19 +14,19 @@ export class ContactComponent implements OnInit {
 
   legalTermsVisible : boolean = false;
 
-  contactForm = new FormGroup({
-    client : new FormGroup({
-      nameContact: new FormControl('', Validators.required),
-      emailContact: new FormControl('', [Validators.required, Validators.email]),
-      phoneContact: new FormControl('', [Validators.required, Validators.pattern("^(\\+34)[0-9]{9}$")])
+  contactForm = new UntypedFormGroup({
+    client : new UntypedFormGroup({
+      nameContact: new UntypedFormControl('', Validators.required),
+      emailContact: new UntypedFormControl('', [Validators.required, Validators.email]),
+      phoneContact: new UntypedFormControl('', [Validators.required, Validators.pattern("^(\\+34)[0-9]{9}$")])
     }),
-    message : new FormGroup({
-      subjectContact: new FormControl(''),
-      messageContact: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(255)]),
+    message : new UntypedFormGroup({
+      subjectContact: new UntypedFormControl(''),
+      messageContact: new UntypedFormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(255)]),
     }),
-    legalInfo : new FormGroup({
-      commercialContact: new FormControl(''),
-      legalContact: new FormControl('', Validators.requiredTrue)
+    legalInfo : new UntypedFormGroup({
+      commercialContact: new UntypedFormControl(''),
+      legalContact: new UntypedFormControl('', Validators.requiredTrue)
     })
   });
 

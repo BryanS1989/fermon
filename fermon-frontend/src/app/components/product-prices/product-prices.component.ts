@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-product-prices',
@@ -19,10 +19,10 @@ export class ProductPricesComponent implements OnInit {
     maxPrice : this.MAXPRICE
   };
 
-  priceRange = new FormGroup({
-    minPrice: new FormControl(this.MINPRICE, [Validators.min(this.MINPRICE), Validators.max(this.MAXPRICE)]),
-    priceRangeSelector: new FormControl('', [Validators.min(this.MINPRICE), Validators.max(this.MAXPRICE)]),
-    maxPrice: new FormControl(this.MAXPRICE, [Validators.min(this.MINPRICE), Validators.max(this.MAXPRICE)]),
+  priceRange = new UntypedFormGroup({
+    minPrice: new UntypedFormControl(this.MINPRICE, [Validators.min(this.MINPRICE), Validators.max(this.MAXPRICE)]),
+    priceRangeSelector: new UntypedFormControl('', [Validators.min(this.MINPRICE), Validators.max(this.MAXPRICE)]),
+    maxPrice: new UntypedFormControl(this.MAXPRICE, [Validators.min(this.MINPRICE), Validators.max(this.MAXPRICE)]),
   });
 
   constructor() { }

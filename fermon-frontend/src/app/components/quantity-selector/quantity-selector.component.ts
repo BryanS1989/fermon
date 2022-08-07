@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-quantity-selector',
@@ -25,7 +25,7 @@ export class QuantitySelectorComponent implements OnInit {
     15,
     20
   ];
-  quantitySelector = new FormControl(1);
+  quantitySelector = new UntypedFormControl(1);
 
   constructor() { }
 
