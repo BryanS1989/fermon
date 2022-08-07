@@ -1,0 +1,28 @@
+<nav class="price-filter">
+  <form [formGroup]="priceRange">
+    <div class="flex-row">
+      <div class="flex-col">
+        <label for="minPrice">Min.</label>
+        <input type="number"
+          id="minPrice"
+          formControlName="minPrice"
+          class="price-input left neumorphism-inverse capsule"
+        >
+      </div>
+
+      <div class="flex-col">
+        <label for="maxPrice">Max.</label>
+        <input type="number"
+          id="maxPrice"
+          formControlName="maxPrice"
+          class="price-input right neumorphism-inverse capsule"
+        >
+      </div>
+    </div>
+
+    <div class="slidecontainer">
+      <input type="range" min="{{MINPRICE}}" max="{{MAXPRICE}}" step="5" class="slider neumorphism-inverse capsule" formControlName="priceRangeSelector">
+    </div>
+
+  </form>
+</nav>

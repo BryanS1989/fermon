@@ -1,0 +1,40 @@
+.price-filter {
+  padding: 0.5rem;
+
+  label {
+    font-weight: bold;
+  }
+}
+
+.price-input {
+  margin: 0.5rem;
+  width: 5rem;
+  text-align: center;
+
+  .left {
+    align-self: flex-start;
+  }
+
+  .right {
+    align-self: flex-end;
+  }
+}
+.slidecontainer {
+  padding: 0.5rem;
+
+  .slider {
+    -webkit-appearance: none;
+    height: 1.5rem;
+    width: 100%;
+    padding: 0;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 2rem;
+    width: 2rem;
+    background-color: #0080bc;
+    border-radius: 100%;
+  }
+}
