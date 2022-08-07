@@ -30,6 +30,7 @@ import { ProductFilterComponent } from './components/product-filter/product-filt
 import { ProductCategoriesComponent } from './components/product-categories/product-categories.component';
 import { ProductCategoryNodeComponent } from './components/product-category-node/product-category-node.component';
 import { ProductBrandsComponent } from './components/product-brands/product-brands.component';
+import { ProductPricesComponent } from './components/product-prices/product-prices.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { ProductBrandsComponent } from './components/product-brands/product-bran
     ProductFilterComponent,
     ProductCategoriesComponent,
     ProductCategoryNodeComponent,
-    ProductBrandsComponent
+    ProductBrandsComponent,
+    ProductPricesComponent
   ],
   imports: [
     BrowserModule,

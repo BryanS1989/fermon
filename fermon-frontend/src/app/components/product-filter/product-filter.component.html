@@ -33,18 +33,17 @@
           *ngIf="i === 0"
           (selectedCategory)="filterCategory($event)"
         ></app-product-categories>
-        <div
+
+        <app-product-brands
           *ngIf="i === 1"
+          (selectedBrand)="filterBrand($event)"
         >
-          <app-product-brands
-            (selectedBrand)="filterBrand($event)"
-          >
-          </app-product-brands>
-        </div>
-        <div
+        </app-product-brands>
+
+        <app-product-prices
           *ngIf="i === 2"
-        >
-        </div>
+          (selectedPriceRange)="filterPrice($event)"
+        ></app-product-prices>
       </div>
     </section>
   </section>

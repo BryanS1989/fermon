@@ -26,6 +26,7 @@ export class ProductFilterComponent implements OnInit {
 
   selectedCategories : any[] = [];
   selectedBrand : any = {};
+  selectedPrice : any = {};
 
   constructor() { }
 
@@ -67,6 +68,38 @@ export class ProductFilterComponent implements OnInit {
 
     let result = this.products.filter((product : any) => {
         return product.brandId === brand.id;
+    });
+
+    this.filteredProducts.emit(result);
+  }
+
+  filterPrice(priceRange : any) {
+    console.log('[ProductFilterComponent] filterPrice([' + priceRange.minPrice + ', ' + priceRange.maxPrice + '])');
+
+    this.selectedPrice = priceRange;
+
+    if (!priceRange) {
+      this.filteredProducts.emit(this.products);
+    }
+
+    let result = this.products.filter((product : any) => {
+        if ( priceRange.maxPrice !== 1000 && priceRange.minPrice !== 0 ) {
+
+          return ( product.price <= priceRange.maxPrice ) && ( product.price >= priceRange.minPrice );
+
+        } else if ( priceRange.maxPrice !== 1000 ) {
+
+          return ( product.price <= priceRange.maxPrice );
+
+        } else if ( priceRange.minPrice !== 0 ) {
+
+          return ( product.price >= priceRange.minPrice );
+
+        } else {
+
+          return false;
+
+        }
     });
 
     this.filteredProducts.emit(result);
