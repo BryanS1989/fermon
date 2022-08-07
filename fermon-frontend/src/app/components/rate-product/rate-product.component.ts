@@ -23,7 +23,7 @@ export class RateProductComponent implements OnInit {
     var starRate : any[] = [];
 
     for (let index = 0; index < 5; index++) {
-      var icon : IconDefinition = farStar;
+      var icon : any = fasStar ;
 
       if (index < integerRate) {
         icon = fasStar ;
