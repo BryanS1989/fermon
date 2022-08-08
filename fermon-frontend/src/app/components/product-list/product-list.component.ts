@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
+import { Store } from "@ngrx/store";
+import { AppState } from "src/app/app.reducer";
+import { Product } from "src/app/models/product.model";
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -10,71 +14,19 @@ export class ProductListComponent implements OnInit {
 
   productsTitle : string = 'Nuestros productos';
 
-  products : any[] = [
-    {
-      id : 0,
-      name : "Tornillo DIN 7985 Inox",
-      shortDescription : "3mm de diametro",
-      price : 0.5,
-      currency : "euro",
-      category : [2],
-      brandId : 0
-    },
-    {
-      id : 1,
-      name : "Arandela DIN 125 Inox",
-      shortDescription : "5mm de diametro",
-      price : 0.25,
-      currency : "euro",
-      category : [1, 0],
-      brandId : 0
-    },
-    {
-      id : 2,
-      name : "TUERCA DIN 985 INOX",
-      shortDescription : "15mm de diametro",
-      price : 25.95,
-      currency : "euro",
-      category : [1, 0],
-      brandId : 1
-    },
-    {
-      id : 3,
-      name : "Varilla roscada DIN 975 Inox",
-      shortDescription : "2cm de largo",
-      price : 1.25,
-      currency : "euro",
-      category : [1, 2],
-      brandId : 2
-    },
-    {
-      id : 4,
-      name : "Pistola 'ERGO GARDEN'",
-      shortDescription : "Con tres modos de dispersión",
-      price : 19.95,
-      currency : "euro",
-      category : [3, 0, 0],
-      brandId : 7
-    },
-    {
-      id : 5,
-      name : "Tornillo DIN 7982 Inox",
-      shortDescription : "1cm de diametro",
-      price : 0.1,
-      currency : "euro",
-      category : [2],
-      brandId : 9
-    },
-  ];
+  products : Product[] = [];
 
   filteredProducts : any[] = [];
   preselectedCategory : any[] = [];
 
   constructor(
     private route: ActivatedRoute,
+    private store: Store<AppState>
   ) { }
 
   ngOnInit(): void {
+    this.store.select('products').subscribe( products => this.products = products );
+
     const categoryIdPreSelected = this.route.snapshot.paramMap.get('categoryId')!;
 
     if (categoryIdPreSelected !== null) {
