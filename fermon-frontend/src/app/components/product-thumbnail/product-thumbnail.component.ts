@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Product } from "src/app/models/product.model";
 
 import { faEuroSign, faDollarSign, faLiraSign  } from "@fortawesome/free-solid-svg-icons";
 
@@ -9,11 +10,13 @@ import { faEuroSign, faDollarSign, faLiraSign  } from "@fortawesome/free-solid-s
 })
 export class ProductThumbnailComponent implements OnInit {
 
-  @Input() product : any;
+  @Input() product : Product;
 
   currencyIcon : any = null;
 
-  constructor() { }
+  constructor() {
+    this.product = new Product();
+  }
 
   ngOnInit(): void {
     if (this.product) {
