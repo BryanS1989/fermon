@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
+import { environment } from "src/environments/environment";
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { StoreModule } from "@ngrx/store";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { productsReducer } from "./store/products/products.reducer";
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -69,7 +71,11 @@ import { ProductPricesComponent } from './components/product-prices/product-pric
     ReactiveFormsModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({products: productsReducer})
+    StoreModule.forRoot({products: productsReducer}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
