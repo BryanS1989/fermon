@@ -1,14 +1,9 @@
-import { createAction, props } from "@ngrx/store";
+import { createAction, props, createSelector } from "@ngrx/store";
+import { Product } from "src/app/models/product.model";
 
 export const createProduct = createAction (
   '[PRODUCTS] Create product',
   props<{
-    id : number,
-    name : string,
-    shortDescription : string,
-    price : number,
-    currency : string,
-    category : number[],
-    brandId : number
+    product : Product
   }>()
 );
