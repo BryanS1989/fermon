@@ -2,18 +2,18 @@
   <section class="product-detail neumorphism flex-col">
     <header>
       <h1
-        *ngIf="productDetail.name"
+        *ngIf="product?.name"
         class="product-detail-name"
       >
-        {{productDetail.name}}
+        {{product?.name}}
       </h1>
     </header>
 
-    <picture *ngIf="productDetail.image; else defaultProudctImage">
-      <source media="(min-width: 1023px)" srcset="../../../assets/images/banners/{{productDetail.image}}_1440.jpg">
-      <source media="(min-width: 767px)" srcset="../../../assets/images/banners/{{productDetail.image}}_768.jpg">
-      <source media="(min-width: 767px)" srcset="../../../assets/images/banners/{{productDetail.image}}_425.jpg">
-      <img src="../../../assets/images/banners/{{productDetail.image}}_425.jpg" class="product-detail-image neumorphism-inverse"/>
+    <picture *ngIf="product?.image; else defaultProudctImage">
+      <source media="(min-width: 1023px)" srcset="../../../assets/images/banners/{{product?.image}}_1440.jpg">
+      <source media="(min-width: 767px)" srcset="../../../assets/images/banners/{{product?.image}}_768.jpg">
+      <source media="(min-width: 767px)" srcset="../../../assets/images/banners/{{product?.image}}_425.jpg">
+      <img src="../../../assets/images/banners/{{product?.image}}_425.jpg" class="product-detail-image neumorphism-inverse"/>
     </picture>
     <ng-template #defaultProudctImage>
       <picture>
@@ -27,36 +27,36 @@
 
     <div class="product-detail-info">
       <dl>
-        <div *ngIf="productDetail.reference" class="product-detail-info-row">
+        <div *ngIf="product?.reference" class="product-detail-info-row">
           <dt>
             Ref
           </dt>
           <dd class="neumorphism-inverse">
-            {{ productDetail.reference }}
+            {{ product?.reference }}
           </dd>
         </div>
 
-        <div *ngIf="productDetail.shortDescription" class="product-detail-info-row">
+        <div *ngIf="product?.shortDescription" class="product-detail-info-row">
           <dt>
             Detalle
           </dt>
           <dd class="neumorphism-inverse">
-            {{ productDetail.shortDescription }}
+            {{ product?.shortDescription }}
           </dd>
         </div>
 
-        <div *ngIf="productDetail.rate" class="product-detail-info-row">
+        <div *ngIf="product?.rate" class="product-detail-info-row">
           <dt>
             Valoración
           </dt>
           <dd class="neumorphism-inverse text-align-center">
-            <app-rate-product [rate]="productDetail.rate"
+            <app-rate-product [rate]="product?.rate!"
               [editable]="false"
             ></app-rate-product>
           </dd>
         </div>
 
-        <div *ngIf="productDetail.price" class="product-detail-info-row">
+        <div *ngIf="product?.price" class="product-detail-info-row">
           <dt>
             Precio
           </dt>
@@ -82,7 +82,7 @@
     </div>
 
     <app-add-to-cart-button
-      [productId]="productDetail.id"
+      [productId]="product?.id!"
       [quantitySelected]="quantitySelected"
     ></app-add-to-cart-button>
 

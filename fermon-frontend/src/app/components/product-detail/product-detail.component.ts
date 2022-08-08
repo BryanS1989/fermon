@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap, NavigationEnd } from '@angular/router';
+
+import { Store } from "@ngrx/store";
+import { AppState } from "src/app/app.reducer";
+import { Product } from "src/app/models/product.model";
+import * as productsSelector from "src/app/store/products/products.selectors";
 
 import { faEuroSign, faDollarSign, faLiraSign  } from "@fortawesome/free-solid-svg-icons";
 
@@ -9,10 +15,14 @@ import { faEuroSign, faDollarSign, faLiraSign  } from "@fortawesome/free-solid-s
 })
 export class ProductDetailComponent implements OnInit {
 
+  @Input() productId : number = 0;
+
   currencyIcon = faEuroSign;
 
   quantitySelected : number = 1;
   productDetailDefaultImage = 'BANNER_IMAGE_2';
+
+  product : Product | undefined ;
 
   productDetail = {
     id : 1,
@@ -84,11 +94,26 @@ export class ProductDetailComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private store: Store<AppState>
+  ) {
+    router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        this.productId = + this.route.snapshot.paramMap.get('productId')!;
+        this.store.select(productsSelector.getProductById(this.productId))
+                  .subscribe((product) => {
+                    this.product = product;
+                  });
+      }
+    });
+
+  }
 
   ngOnInit(): void {
-    if (this.productDetail) {
-      switch (this.productDetail.currency) {
+    if (this.product) {
+      switch (this.product.currency) {
         case 'euro':
           this.currencyIcon = faEuroSign;
           break;
